@@ -1,0 +1,16 @@
+
+<div >
+<select (change)="onChartTypeChange($event)" class="subbox1">
+  <option value="pie">Pie Chart</option>
+  <option value="bar">bar Chart</option>
+  <option value="timeline">timeline Chart</option>
+  <option value="maps">Maps</option>
+</select></div>
+
+  
+    <app-barchart *ngIf="selectedChart === 'bar'"></app-barchart>
+    <app-piechart *ngIf="selectedChart === 'pie'"></app-piechart>
+    <app-timelinechart *ngIf="selectedChart ==='timeline'"></app-timelinechart>
+    <app-maps *ngIf="selectedChart ==='maps'"></app-maps>
+  
+

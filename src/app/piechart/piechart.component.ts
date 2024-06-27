@@ -1,18 +1,25 @@
-import { Component, ElementRef, OnInit, ViewChild} from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild, input} from "@angular/core";
 import {
   ChartComponent,
   ApexNonAxisChartSeries,
   ApexChart,
 
 } from "ng-apexcharts";
-import { CdkAccordionModule } from "@angular/cdk/accordion";
 import { HttpClient } from "@angular/common/http";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 export type ChartOptions = {
  labels: string[];
  series:ApexNonAxisChartSeries;
- chart:ApexChart
+ chart:ApexChart;
+ stroke: any;
+ dataLabels: any;
+
+
+
+ grid: any;
+
+ title: any;
 
 };
 export type ChartOptions1 = {
@@ -22,15 +29,15 @@ export type ChartOptions1 = {
  
  };
 
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-piechart',
+  templateUrl: './piechart.component.html',
+  styleUrl: './piechart.component.css'
 })
-export class AppComponent   implements OnInit{
-  title = 'newregister';
-  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
-  expandedIndex = 0;
+export class PiechartComponent {
+
+
 
   filteredChartData: { name: string, data: number }[] = [];
 
@@ -43,10 +50,57 @@ export class AppComponent   implements OnInit{
   public chartOptions: ChartOptions = {
     series: [],
     chart: {
-      
-      type: "pie"
+      type: "pie",
+      toolbar:{
+        show: true,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: true,
+          selection: false,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          
+          customIcons: []
+        },
+        export: {
+         
+          svg: {
+            filename: undefined,
+          },
+          png: {
+            filename: undefined,
+          }
+        },
+        autoSelected: 'zoom' 
+      },
     },
-    labels: []
+    labels: [],
+    stroke: {
+      width: 5,
+      curve: "straight",
+      dashArray: [0, 8, 5]
+    },
+    title: {
+     
+      align: "left"
+    },
+  
+    dataLabels:{
+      enabled:true,
+      onItemClick: {
+        toggleDataSeries: true
+    },
+    onItemHover: {
+      highlightDataSeries: true
+  },
+    },
+    
+    grid: {
+      borderColor: "#f1f1f1"
+    }
   };
   searchTerm: string = '';
 
@@ -194,3 +248,4 @@ export class AppComponent   implements OnInit{
   
   
 }
+

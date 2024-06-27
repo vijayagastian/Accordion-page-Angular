@@ -1,0 +1,277 @@
+
+.box {
+    
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.subbox {
+  height: 100%;
+  width: 100%;
+  
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  color: rgb(116, 127, 135);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.subbox {
+  width: 100%;
+ 
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  color: rgb(116, 127, 135);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+@media(max-width:320px){
+  .chart{
+    width: 300px;
+  }
+}
+@media (max-width: 960px) {
+  .subbox {
+
+      display: flex;
+      padding: 10px;
+  }
+  .content-container{
+      display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .subbox {
+      padding: 5px;
+  }
+
+  .select-container, .custom-select {
+      width: 100%;
+  }
+}
+.button-container {
+  flex-direction: row;
+ 
+  display: flex;
+  
+}
+
+.button-container button {
+ padding: 0%;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container svg {
+  width: 24px;
+  height: 24px;
+
+}
+.button-container input{
+  
+  margin-left: 25%;
+}
+.input {
+ align-items: right;
+  
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  flex-grow: 1; 
+}
+
+.button-container button:hover {
+  background-color: #474c51;
+}
+
+.custom-select {
+  display:inline;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .content-container {
+      flex-direction: row;
+  }
+  
+}
+@media (min-width:300px){
+  .chart{
+    height: 250px;
+    width: 300px;
+  }
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* Adjust as needed */
+}
+.table-container{
+width: 80%;
+flex-direction: column;
+padding-right: 0%;
+}
+.chart-container{
+width: 70%;
+}
+.chart {
+ 
+ height: 600px;
+ width: 600px;
+  overflow: auto; 
+  
+  
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;/* Enable scrolling if content exceeds container */
+}
+.button-container {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensure buttons appear above other content */
+  background-color: white; /* Optional: Add background color to buttons */
+}
+.table-scroll-container {
+  flex: 1; /* Allow the container to expand and fill available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 300px; /* Set the maximum height for the container */
+}
+
+.table-scroll-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-scroll-container th
+ {
+  position: sticky;
+  top: 0;
+  background-color: #C7CAFF; /* Set background color for sticky cells */
+}
+
+.table-scroll-container th {
+  z-index: 1; /* Ensure headers are above cells */
+}
+
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: #C7CAFF; /* Optional: Set background color for sticky header */
+}
+
+
+@media (min-width:320){
+  
+.table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
+  overflow-y: auto;
+}
+.custom-table {
+  width: 100%; /* Set the desired width here */
+}
+
+}
+th {
+  position: sticky;
+  top: 0;
+  background-color: #C7CAFF;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+
+.subbox button, .subbox a {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.subbox .content {
+  display: none;
+  position: absolute;
+  background-color: #f8f4e1;
+  min-width: 100px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subbox:hover .content {
+  display: block;
+}
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.search-input {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.select-container {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+ 
+}
